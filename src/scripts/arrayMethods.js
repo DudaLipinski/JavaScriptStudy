@@ -1,15 +1,13 @@
-//SPLICE
-//Used to delete parts os an array and add more itens.
+//Study Description:
+//https://dudalipinski.notion.site/Array-methods-2ff465ca93e748968f458a1b830372eb
+
 const numbers = [1, 2, 3, 4];
 
-// (2 (start), 2 (delete), 6, 7(insert));
 const deleted = numbers.splice(2, 2, 6, 7);
 
 console.log(numbers); // [1, 2, 6, 7]
 console.log(deleted); // [3, 4]
 
-//SLICE
-//Used to create a new array too.
 
 const participants = ['Maria', 'Leo', 'Japa', 'Gui'];
 const winners = participants.slice(0, 2);
@@ -17,8 +15,6 @@ const winners = participants.slice(0, 2);
 console.log(participants); //'Maria', 'Leo', 'Japa', 'Gui'
 console.log(winners); //'Maria', 'Leo'
 
-//CONCAT
-//Used to merge arrays
 
 const a = [1, 2, 3];
 const b = [1, 2, 3];
@@ -26,8 +22,6 @@ const c = [1, 2, 3];
 
 const d = a.concat(b, c);
 console.log(d); // [1, 2, 3, 1, 2, 3, 1, 2, 3]
-
-//ForEach
 
 let sum = 0;
 
@@ -53,10 +47,6 @@ letters.forEach(item => {
   }
 })
 
-// console.log(count);
-
-//IndexOf and lastIndexOf
-// Return the first index or the last one. *Not the value.
 
 const names = ['Maria', 'Eduarda', 'Leonardo', 'Diehl', 'Maria'];
 
@@ -64,8 +54,6 @@ console.log(names.indexOf('Maria')); //0
 console.log(names.lastIndexOf('Maria')); //4
 console.log(names.lastIndexOf('Luciane')); // -1
 
-
-//Find
 
 let users = [
   {id: 1, name: "John"},
