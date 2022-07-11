@@ -160,3 +160,33 @@ function getComplement(color) {
 }
 
 getComplement(color);
+
+
+let user = {
+  name: 'John',
+  age: 23,
+}
+
+let userKeys = Object.keys(user);
+let userValues = Object.values(user);
+let userArray = Object.entries(user);
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+let salariesValues = Object.values(salaries);
+
+function sumSalaries(salaries) {
+  let sum = 0;
+
+  salaries.forEach(salarie => {
+    sum += salarie;
+  })
+
+  return sum;
+}
+
+console.log(sumSalaries(salariesValues)); // 650
