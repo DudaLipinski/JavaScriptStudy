@@ -22,3 +22,20 @@ let timerId = setInterval(() => console.log('tick'), 2000);
 
 // after 5 seconds stop
 setTimeout(() => { clearInterval(timerId); console.log('stop'); }, 5000);
+
+
+
+
+//how not lost .this
+let user = {
+  firstName: "Maria",
+  sayHi() {
+    console.log(`Hello, ${this.firstName}!`);
+  }
+};
+
+setTimeout(function() {
+  user.sayHi(); // Hello, John!
+}, 1000);
+
+setTimeout(() => user.sayHi(), 1000); // Hello, John!
