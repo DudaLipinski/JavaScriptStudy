@@ -44,11 +44,11 @@ class Rectangle {
     this.color = _color;
   }
 
-  getArea(){
+  getArea() {
     return this.width * this.height;
   }
 
-  printRectangle(){
+  printRectangle() {
     console.log(`I am a rectangle of ${this.width} 'x' ${this.height}, and I am ${this.color}`);
   }
 }
@@ -61,13 +61,13 @@ let myRectangle2 = new Rectangle(3, 4, "red");
 
 //Get, Set and Static Methods
 class Square {
-  constructor (_width) {
+  constructor(_width) {
     this.width = _width;
     this.height = _width;
     this.numOfRequestForArea = 0;
   }
 
-  get area(){
+  get area() {
     this.numOfRequestForArea++;
     return this.width * this.height;
   }
@@ -77,7 +77,7 @@ class Square {
     this.height = this.width;
   }
 
-  static equals (a, b) {
+  static equals(a, b) {
     return a.width * a.height === b.width * b.height;
   }
 }
@@ -112,7 +112,7 @@ class Programmer extends Person {
     this.languageOfProgramming = _languageOfProgramming;
   }
 
-  code(){
+  code() {
     console.log(`I am ${this.name}, and I programming in ${this.languageOfProgramming}`);
   }
 }
@@ -126,9 +126,50 @@ const programmers = [
 
 
 function developSoftware(programmers) {
-  for(let programmer of programmers){
+  for (let programmer of programmers) {
     programmer.code();
   }
 }
 
 developSoftware(programmers);
+
+//Polymorphism
+
+class Animal {
+  constructor(_name) {
+    this.name = _name;
+  }
+
+  makeSound() {
+    console.log("Generic sound");
+  }
+}
+
+class Cat extends Animal {
+  constructor(_name, _sound) {
+    super(_name);
+
+    this.sound = _sound;
+  }
+
+  makeSound() {
+    // super.makeSound();
+    console.log(this.sound);
+  }
+}
+
+const cats = [
+  new Cat("Ioga", "Miau! Miau!"),
+  new Cat("Nanquim", "Miauuuu!"),
+];
+
+let ioga = new Cat("Ioga", "Miauuu");
+
+function printSounds (cats){
+  for(let cat of cats){
+   console.log(cat.makeSound());
+  }
+}
+
+ioga.makeSound();
+printSounds(cats);
