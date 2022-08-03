@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="elem">
+      <div id="elem-content">Element</div>
+    </div>
+
+    <ul>
+      <li>The</li>
+      <li>test</li>
+    </ul>
+    <ul>
+      <li>has</li>
+      <li>passed</li>
+    </ul>
+
+    <a href="http://example.com/file.zip">Link 1</a>
+    <a href="http://ya.ru">Link 2</a>
+
+    <h1>Contents</h1>
+
+    <div class="contents">
+      <ul class="book">
+        <li class="chapter">Chapter 1</li>
+        <li class="chapter">Chapter 2</li>
+      </ul>
+    </div>
+
+    <script>
+      //getElementById
+      let elem = document.getElementById("elem");
+      elem.style.background = "red";
+
+      //querySelectorAll
+      let elements = document.querySelectorAll("ul > li:last-child");
+
+      for (let element of elements) {
+        console.log(element.innerHTML);
+      }
+
+      //matches
+      for (let elem of document.body.children) {
+        if (elem.matches('a[href$="zip"]')) {
+          console.log(`The archive reference: ${elem.href}`);
+        }
+      }
+
+      //closest
+      let chapter = document.querySelector(".chapter");
+
+      console.log(chapter.closest(".book"));
+      console.log(chapter.closest(".contents"));
+
+      console.log(chapter.closest(".h1"));
+    </script>
+  </body>
+</html>
