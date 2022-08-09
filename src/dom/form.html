@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <form name="my">
+      <input name="one" value="1" />
+      <input name="city" value="Stockholm" />
+      <input type="radio" name="age" value="10" />
+      <input type="radio" name="age" value="20" />
+      <select id="select">
+        <option value="apple">Apple</option>
+        <option value="pear">Pear</option>
+        <option value="banana">Banana</option>
+      </select>
+    </form>
+
+    <script>
+      // get the form
+      let form = document.forms.my;
+
+      // get the element
+      let city = form.elements.city;
+      console.log(city.value); // Stockholm
+
+      city.value = "Curitiba";
+
+      //for radio or checkbox
+      let ageElems = form.elements.age;
+      console.log(ageElems[0]);
+
+      // all three lines do the same thing
+      select.options[2].selected = true;
+      select.selectedIndex = 2;
+      select.value = "banana";
+    </script>
+  </body>
+</html>
